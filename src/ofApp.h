@@ -5,31 +5,30 @@
 
 class ofApp : public ofBaseApp, public ofxMidiListener {
 
-	public:
-		void setup();
-		void setupShader(std::string vertex_shader, std::string fragment_shader);
-		void update();
-		void draw();
+public:
+    void setup();
+    void setupShader(std::string vertex_shader, std::string fragment_shader);
+    void update();
+    void draw();
 
-		void keyPressed(int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
-		void mouseExited(int x, int y);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage message);
+    void keyPressed(int key);
+    void keyReleased(int key);
+    void mouseMoved(int x, int y);
+    void mouseDragged(int x, int y, int button);
+    void mousePressed(int x, int y, int button);
+    void mouseReleased(int x, int y, int button);
+    void mouseEntered(int x, int y);
+    void mouseExited(int x, int y);
+    void windowResized(int w, int h);
+    void dragEvent(ofDragInfo dragInfo);
+    void gotMessage(ofMessage message);
 
-    
 private:
-        ofShader shader;
-        void newMidiMessage(ofxMidiMessage& eventArgs);
+    ofShader shader;
+    void newMidiMessage(ofxMidiMessage& eventArgs);
 
-        ofxMidiIn midiIn;
+    ofxMidiIn midiIn;
 
-        int _midiVelocity;
-        int _midiPitch;
+    int _midiVelocity;
+    int _midiPitch;
 };
